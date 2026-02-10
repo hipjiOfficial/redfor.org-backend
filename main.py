@@ -17,7 +17,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/api/shop")
+@app.get("/shop")
 def get_shop():
     connection_string = os.getenv("DB_CONNECTION_STRING")
 
