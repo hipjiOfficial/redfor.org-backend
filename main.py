@@ -31,7 +31,7 @@ def get_shop():
     try:
         with conn.cursor() as cur:
             cur.execute("""
-                SELECT pc1, pc2, pc3, log_date
+                SELECT pc1, pc2, pc3, skin, log_date
                 FROM shop_log
                 WHERE log_date <= %s
                 ORDER BY log_date DESC
@@ -47,7 +47,8 @@ def get_shop():
             "pc1": row[0],
             "pc2": row[1],
             "pc3": row[2],
-            "log_date": row[3].isoformat()
+            "skin": row[3],
+            "log_date": row[4].isoformat()
         }
 
     finally:
